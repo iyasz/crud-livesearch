@@ -25,23 +25,23 @@
                         <form action="" method="post">
                             <div class="mb-3">
                                 <label for="nama">Nama Lengkap</label>
-                                <input type="text" placeholder="Masukan Nama Lengkap" name="nama" id="nama" class="form-control">
+                                <input type="text" autocomplete="off" placeholder="Masukan Nama Lengkap" name="nama" id="nama" class="form-control">
                             </div>
                             <div class="mb-3">
                                 <label for="nis">NIS</label>
-                                <input type="text" placeholder="Masukan NIS" name="nis" id="nis" class="form-control">
+                                <input type="text" placeholder="Masukan NIS" autocomplete="off" name="nis" id="nis" class="form-control">
                             </div>
                             <div class="mb-3">
                                 <label for="telepon">No Telp</label>
-                                <input type="text" placeholder="Masukan No Telepon" name="telepon" id="telepon" class="form-control">
+                                <input type="text" autocomplete="off" placeholder="Masukan No Telepon" name="telepon" id="telepon" class="form-control">
                             </div>
                             <div class="mb-3">
                                 <label for="sekolah">Asal Sekolah</label>
-                                <input type="text" placeholder="Masukan Asal Sekolah" name="sekolah" id="sekolah" class="form-control">
+                                <input type="text" placeholder="Masukan Asal Sekolah" autocomplete="off" name="sekolah" id="sekolah" class="form-control">
                             </div>
                             <div class="mb-5">
                                 <label for="alamat">Alamat</label>
-                                <input type="text" placeholder="Masukan Alamat" name="alamat" id="alamat" class="form-control">
+                                <input type="text" autocomplete="off" placeholder="Masukan Alamat" name="alamat" id="alamat" class="form-control">
                             </div>
 
                             <button class="btn btn-primary" type="submit" name="submit">Submit</button>
