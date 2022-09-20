@@ -1,3 +1,28 @@
+<?php
+
+$conn = mysqli_connect('localhost', 'root', '', 'crud');
+
+if (isset($_POST['submit'])) {
+    $nama = htmlspecialchars($_POST['nama']);
+    $nis = htmlspecialchars($_POST['nis']);
+    $telepon = htmlspecialchars($_POST['telepon']);
+    $sekolah = htmlspecialchars($_POST['sekolah']);
+    $alamat = htmlspecialchars($_POST['alamat']);
+
+    if (empty($nama) or empty($nis) or empty($telepon) or empty($sekolah) or empty($alamat)) {
+        echo "<script>alert('Masukan Data dengan Lengkap!');
+                      location.replace('index.php')</script>";
+    } else {
+        $simpan = $conn->query("INSERT INTO siswa VALUES(NULL, '$nama', '$nis', '$telepon', '$sekolah', '$alamat')");
+        echo "<script>alert('Data Berhasil Di Simpan!');
+                      location.replace('index.php')</script>";
+    }
+}
+
+
+?>
+
+
 <!doctype html>
 <html lang="en">
 
@@ -29,7 +54,7 @@
                             </div>
                             <div class="mb-3">
                                 <label for="nis">NIS</label>
-                                <input type="text" placeholder="Masukan NIS" autocomplete="off" name="nis" id="nis" class="form-control">
+                                <input type="number" placeholder="Masukan NIS" autocomplete="off" name="nis" id="nis" class="form-control">
                             </div>
                             <div class="mb-3">
                                 <label for="telepon">No Telp</label>
