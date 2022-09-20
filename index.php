@@ -91,6 +91,14 @@ if (isset($_POST['delete'])) {
             <div class="col-lg-11">
                 <div class="card">
                     <div class="card-body">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <form action="" method="post" class="d-flex gap-2 mb-4">
+                                    <input type="text" name="keyword" id="keyword" class="form-control" autocomplete="off" placeholder="Cari Disini ..">
+                                    <button type="submit" class="btn btn-primary btn-sm" name="cari" id="tombol-cari">Search</button>
+                                </form>
+                            </div>
+                        </div>
                         <table class="table">
                             <thead>
                                 <tr>
@@ -100,7 +108,7 @@ if (isset($_POST['delete'])) {
                                     <th>No Telp</th>
                                     <th>Asal Sekolah</th>
                                     <th>Alamat</th>
-                                    <th class="text-center">Aksi</th>
+                                    <th class="text- name=" keyword" class="form-control" autocomplete="off" center">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -130,6 +138,7 @@ if (isset($_POST['delete'])) {
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
