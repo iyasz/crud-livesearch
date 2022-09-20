@@ -9,10 +9,10 @@ keyword.addEventListener("keyup", function () {
   // cek kesiapan ajax
   xhr.onreadystatechange = function () {
     if (xhr.readyState == 4 && xhr.status == 200) {
-      console.log("ajax ok");
+      container.innerHTML = xhr.responseText;
     }
   };
 
-  xhr.open("GET", "ajax/coba.txt", true);
+  xhr.open("GET", "ajax/crud.php", true);
   xhr.send();
 });
