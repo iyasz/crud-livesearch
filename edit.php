@@ -45,7 +45,7 @@
                             </div>
 
                             <button class="btn btn-primary" type="submit" name="submit">Submit</button>
-                            <button class="btn btn-danger" type="reset">Reset</button>
+                            <a href="index.php" class="btn btn-warning">Kembali</a>
                         </form>
                     </div>
                 </div>
