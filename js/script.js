@@ -13,6 +13,6 @@ keyword.addEventListener("keyup", function () {
     }
   };
 
-  xhr.open("GET", "ajax/crud.php", true);
+  xhr.open("GET", "ajax/crud.php?keyword=" + keyword.value, true);
   xhr.send();
 });
