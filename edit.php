@@ -1,3 +1,33 @@
+<?php
+
+$conn = mysqli_connect('localhost', 'root', '', 'crud');
+
+$id = $_GET['id'];
+
+$data = $conn->query("SELECT * FROM siswa where id = '$id'");
+
+$datas = mysqli_fetch_assoc($data);
+
+if (isset($_POST['submit'])) {
+    $nama = htmlspecialchars($_POST['nama']);
+    $nis = htmlspecialchars($_POST['nis']);
+    $telepon = htmlspecialchars($_POST['telepon']);
+    $sekolah = htmlspecialchars($_POST['sekolah']);
+    $alamat = htmlspecialchars($_POST['alamat']);
+
+    if (empty($nama) or empty($nis) or empty($telepon) or empty($sekolah) or empty($alamat)) {
+        echo "<script>alert('Masukan Data dengan Lengkap!');
+                      location.replace('index.php')</script>";
+    } else {
+        $simpan = $conn->query("INSERT INTO siswa VALUES(NULL, '$nama', '$nis', '$telepon', '$sekolah', '$alamat')");
+        echo "<script>alert('Data Berhasil Di Simpan!');
+                      location.replace('index.php')</script>";
+    }
+}
+
+?>
+
+
 <!doctype html>
 <html lang="en">
 
@@ -25,23 +55,23 @@
                         <form action="" method="post">
                             <div class="mb-3">
                                 <label for="nama">Nama Lengkap</label>
-                                <input type="text" autocomplete="off" placeholder="Masukan Nama Lengkap" name="nama" id="nama" class="form-control">
+                                <input type="text" autocomplete="off" placeholder="Masukan Nama Lengkap" name="nama" id="nama" class="form-control" value="<?= $datas['nama'] ?>">
                             </div>
                             <div class="mb-3">
                                 <label for="nis">NIS</label>
-                                <input type="text" autocomplete="off" placeholder="Masukan NIS" name="nis" id="nis" class="form-control">
+                                <input type="text" autocomplete="off" placeholder="Masukan NIS" name="nis" id="nis" class="form-control" value="<?= $datas['nis'] ?>">
                             </div>
                             <div class="mb-3">
                                 <label for="telepon">No Telp</label>
-                                <input type="text" autocomplete="off" placeholder="Masukan No Telepon" name="telepon" id="telepon" class="form-control">
+                                <input type="text" autocomplete="off" placeholder="Masukan No Telepon" name="telepon" id="telepon" class="form-control" value="<?= $datas['telepon'] ?>">
                             </div>
                             <div class="mb-3">
                                 <label for="sekolah">Asal Sekolah</label>
-                                <input type="text" autocomplete="off" placeholder="Masukan Asal Sekolah" name="sekolah" id="sekolah" class="form-control">
+                                <input type="text" autocomplete="off" placeholder="Masukan Asal Sekolah" name="sekolah" id="sekolah" class="form-control" value="<?= $datas['asal_sekolah'] ?>">
                             </div>
                             <div class="mb-5">
                                 <label for="alamat">Alamat</label>
-                                <input type="text" autocomplete="off" autocomplete="off" placeholder="Masukan Alamat" name="alamat" id="alamat" class="form-control">
+                                <input type="text" autocomplete="off" autocomplete="off" placeholder="Masukan Alamat" name="alamat" id="alamat" class="form-control" value="<?= $datas['alamat'] ?>">
                             </div>
 
                             <button class="btn btn-primary" type="submit" name="submit">Submit</button>
