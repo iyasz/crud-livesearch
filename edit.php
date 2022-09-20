@@ -19,7 +19,7 @@ if (isset($_POST['submit'])) {
         echo "<script>alert('Masukan Data dengan Lengkap!');
                       location.replace('index.php')</script>";
     } else {
-        $simpan = $conn->query("INSERT INTO siswa VALUES(NULL, '$nama', '$nis', '$telepon', '$sekolah', '$alamat')");
+        $simpan = $conn->query("UPDATE siswa SET nama = '$nama', nis = '$nis', telepon = '$telepon', asal_sekolah = '$sekolah', alamat = '$alamat' WHERE id = '$id' ");
         echo "<script>alert('Data Berhasil Di Simpan!');
                       location.replace('index.php')</script>";
     }
