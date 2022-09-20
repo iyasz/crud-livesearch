@@ -21,6 +21,15 @@ if (isset($_POST['submit'])) {
     }
 }
 
+if (isset($_POST['delete'])) {
+    $id = htmlspecialchars($_POST['id']);
+
+    $delete = $conn->query("DELETE FROM siswa where id = '$id'");
+    echo "<script>alert('Data Berhasil Di Hapus!');
+                      location.replace('index.php')</script>";
+}
+
+
 
 ?>
 
